@@ -1,0 +1,165 @@
+{
+  "navigation": {
+    "home": "Home",
+    "spicylens": "SpicyLens",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact",
+    "language": "Language",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Leading AI Innovation",
+    "subtitle": "in Saudi Arabia",
+    "description": "SpicyDonut is revolutionizing the digital landscape with cutting-edge AI solutions, empowering businesses and individuals with intelligent technology.",
+    "cta": "Discover Our AI Solutions",
+    "stats": {
+      "clients": "Clients Served",
+      "projects": "Projects Completed",
+      "countries": "Countries Served",
+      "accuracy": "AI Accuracy"
+    }
+  },
+  "spicylens": {
+    "title": "Meet SpicyLens",
+    "description": "Your AI-Powered Search Companion that understands context, learns from interactions, and delivers insights that matter.",
+    "searchPlaceholder": "Search products...",
+    "results": "results",
+    "result": "result",
+    "resultsIn": "results in",
+    "currency": "SAR",
+    "massiveDataset": "Massive dataset with instant response",
+    "features": {
+      "fast": {
+        "title": "Lightning Fast",
+        "description": "Sub-second response times with real-time indexing"
+      },
+      "ai": {
+        "title": "AI-Powered",
+        "description": "Advanced ML models understand context and intent"
+      },
+      "multilingual": {
+        "title": "Multilingual",
+        "description": "Native support for Arabic, English, and 50+ languages"
+      }
+    },
+    "cta": "Experience SpicyLens"
+  },
+  "about": {
+    "title": "About SpicyDonut",
+    "subtitle": "Pioneering AI Excellence",
+    "description": "Founded in Saudi Arabia, SpicyDonut is at the forefront of artificial intelligence innovation, developing cutting-edge solutions that transform businesses and empower communities.",
+    "mission": "Our Mission",
+    "missionText": "To democratize AI technology and make intelligent solutions accessible to everyone in the Middle East and beyond.",
+    "vision": "Our Vision",
+    "visionText": "To be the leading AI company in the region, driving digital transformation and contributing to Saudi Arabia's Vision 2030.",
+    "values": {
+      "innovation": {
+        "title": "Innovation",
+        "description": "We push boundaries and challenge the status quo"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for the highest quality in everything we do"
+      },
+      "impact": {
+        "title": "Impact",
+        "description": "We create meaningful change for our clients and communities"
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We operate with transparency and ethical principles"
+      }
+    }
+  },
+  "vision2030": {
+    "title": "Supporting Saudi Vision 2030",
+    "subtitle": "Digital Transformation Goals",
+    "description": "SpicyDonut is proud to contribute to Saudi Arabia's Vision 2030 by advancing AI technology and digital innovation across the Kingdom.",
+    "stats": {
+      "digitalTransformation": "Digital Transformation Progress",
+      "aiAdoption": "AI Adoption Rate",
+      "techStartups": "Tech Startups Supported",
+      "digitalEconomy": "Digital Economy Contribution",
+      "jobsCreated": "Tech Jobs Created",
+      "saudiTalent": "Local Talent Development"
+    },
+    "goals": {
+      "title": "Our Contribution to Vision 2030",
+      "items": [
+        "Advancing AI research and development",
+        "Training local talent in emerging technologies",
+        "Supporting digital transformation initiatives",
+        "Creating innovative tech solutions",
+        "Fostering entrepreneurship ecosystem",
+        "Promoting knowledge-based economy"
+      ]
+    }
+  },
+  "products": {
+    "title": "Our AI Solutions",
+    "subtitle": "Innovative Products",
+    "description": "Discover our suite of AI-powered products designed to solve real-world challenges and drive digital transformation.",
+    "spicylens": {
+      "title": "SpicyLens",
+      "description": "Intelligent search platform with advanced AI capabilities",
+      "features": ["Natural Language Processing", "Real-time Indexing", "Multi-language Support"]
+    },
+    "spicyanalytics": {
+      "title": "SpicyAnalytics",
+      "description": "AI-driven analytics platform for business intelligence",
+      "features": ["Predictive Analytics", "Data Visualization", "Custom Dashboards"]
+    },
+    "spicyassist": {
+      "title": "SpicyAssist",
+      "description": "AI-powered virtual assistant for business automation",
+      "features": ["Natural Language Understanding", "Task Automation", "24/7 Support"]
+    }
+  },
+  "footer": {
+    "description": "Leading AI innovation in Saudi Arabia, empowering businesses with intelligent technology solutions.",
+    "sections": {
+      "company": "Company",
+      "products": "Products",
+      "resources": "Resources",
+      "contact": "Contact"
+    },
+    "links": {
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "documentation": "Documentation",
+      "support": "Support",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "copyright": "© 2024 SpicyDonut. All rights reserved.",
+    "madeIn": "Made with ❤️ in Saudi Arabia"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "retry": "Retry",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "close": "Close",
+    "open": "Open",
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "next": "Next",
+    "previous": "Previous"
+  }
+} 
