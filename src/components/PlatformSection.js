@@ -112,12 +112,12 @@ const PlatformSection = () => {
               </h3>
               <div className="space-y-4">
                 {[
-                  'Natural Language Processing in 50+ languages',
-                  'Computer Vision and Image Recognition',
-                  'Predictive Analytics and Forecasting',
-                  'Real-time Data Processing at Scale',
-                  'Custom Model Training and Fine-tuning',
-                  'Edge AI Deployment Options'
+                  'Natural Language Processing (Arabic & English)',
+                  'Contextual Search Understanding',
+                  'Real-time Content Indexing',
+                  'Scalable Cloud Infrastructure',
+                  'Custom AI Model Development',
+                  'Enterprise-Grade Security'
                 ].map((capability, index) => (
                   <motion.div
                     key={capability}
@@ -140,26 +140,14 @@ const PlatformSection = () => {
               className="relative"
             >
               <div className="bg-gradient-to-br from-saudi-emerald/20 to-emerald-gradient-end/20 rounded-2xl p-8 glass border border-saudi-emerald/30">
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { label: 'Models Deployed', value: '500+' },
-                    { label: 'API Requests/sec', value: '10K+' },
-                    { label: 'Uptime SLA', value: '99.9%' },
-                    { label: 'Data Centers', value: '15+' }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
-                      className="text-center"
-                    >
-                      <div className="text-2xl md:text-3xl font-bold gradient-text mb-2">
-                        {stat.value}
-                      </div>
-                      <p className="text-muted-text text-sm">{stat.label}</p>
-                    </motion.div>
-                  ))}
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-emerald-gradient rounded-full flex items-center justify-center mx-auto mb-6 glow-border">
+                    <Network className="w-10 h-10 text-white" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4">Building the Future</h4>
+                  <p className="text-muted-text">
+                    Our AI platform is being built with cutting-edge technology to deliver unprecedented performance and reliability.
+                  </p>
                 </div>
               </div>
             </motion.div>

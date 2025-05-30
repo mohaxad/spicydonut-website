@@ -11,24 +11,24 @@
   "hero": {
     "title": "Leading AI Innovation",
     "subtitle": "in Saudi Arabia",
-    "description": "SpicyDonut is revolutionizing the digital landscape with cutting-edge AI solutions, empowering businesses and individuals with intelligent technology.",
-    "cta": "Discover Our AI Solutions",
+    "description": "SpicyDonut is building the future of digital solutions with AI-powered search technology, preparing to revolutionize how businesses find and access information.",
+    "cta": "Join Our Journey",
     "stats": {
-      "clients": "Clients Served",
-      "projects": "Projects Completed",
-      "countries": "Countries Served",
-      "accuracy": "AI Accuracy"
+      "clients": "Coming Soon",
+      "projects": "In Development",
+      "countries": "Starting in KSA",
+      "accuracy": "AI-Powered"
     }
   },
   "spicylens": {
     "title": "Meet SpicyLens",
-    "description": "Your AI-Powered Search Companion that understands context, learns from interactions, and delivers insights that matter.",
+    "description": "Next-generation AI search engine that understands context and delivers precise results instantly.",
     "searchPlaceholder": "Search products...",
     "results": "results",
     "result": "result",
     "resultsIn": "results in",
     "currency": "SAR",
-    "massiveDataset": "Massive dataset with instant response",
+    "massiveDataset": "Intelligent search with AI-powered results",
     "features": {
       "fast": {
         "title": "Lightning Fast",
@@ -40,10 +40,10 @@
       },
       "multilingual": {
         "title": "Multilingual",
-        "description": "Native support for Arabic, English, and 50+ languages"
+        "description": "Native support for Arabic and English"
       }
     },
-    "cta": "Experience SpicyLens"
+    "cta": "Coming Soon"
   },
   "about": {
     "title": "About SpicyDonut",
@@ -105,15 +105,30 @@
       "description": "Intelligent search platform with advanced AI capabilities",
       "features": ["Natural Language Processing", "Real-time Indexing", "Multi-language Support"]
     },
-    "spicyanalytics": {
-      "title": "SpicyAnalytics",
-      "description": "AI-driven analytics platform for business intelligence",
-      "features": ["Predictive Analytics", "Data Visualization", "Custom Dashboards"]
+    "accessmind": {
+      "title": "AccessMind",
+      "description": "AI accessibility tools for inclusive web/app design",
+      "features": ["WCAG Compliance", "Auto Alt-Text", "Screen Reader Optimization"]
     },
-    "spicyassist": {
-      "title": "SpicyAssist",
-      "description": "AI-powered virtual assistant for business automation",
-      "features": ["Natural Language Understanding", "Task Automation", "24/7 Support"]
+    "useraura": {
+      "title": "UserAura",
+      "description": "Behavioral intelligence platform with session replays",
+      "features": ["Session Recordings", "Heatmap Analytics", "User Journey Analysis"]
+    },
+    "flowforge": {
+      "title": "FlowForge",
+      "description": "AI-powered business automation and workflow engine",
+      "features": ["Workflow Automation", "AI Decision Trees", "Process Mining"]
+    },
+    "spicyvalet": {
+      "title": "SpicyValet",
+      "description": "Complete valet service management platform for hotels and businesses",
+      "features": ["Branch Management", "Employee Scheduling", "Contract Management"]
+    },
+    "corevault": {
+      "title": "CoreVault",
+      "description": "Private AI deployment suite for enterprises",
+      "features": ["On-Premise Deployment", "Military-Grade Security", "Custom AI Models"]
     }
   },
   "footer": {
@@ -138,7 +153,7 @@
       "phone": "Phone",
       "address": "Address"
     },
-    "copyright": "© 2024 SpicyDonut. All rights reserved.",
+    "copyright": "© 2025 SpicyDonut. All rights reserved.",
     "madeIn": "Made with ❤️ in Saudi Arabia"
   },
   "common": {

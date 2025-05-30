@@ -2,34 +2,32 @@
 // All numbers and facts can be easily modified here
 
 export const siteData = {
-  // Search Statistics
+  // Search Capabilities
   search: {
-    totalHits: 247891, // Total number of search results
-    responseTime: '2ms', // Search response time
-    languages: 50, // Number of supported languages
-    accuracy: '99.9%', // Search accuracy
-    indexedProducts: '500K+', // Number of indexed products
+    responseTime: 'Sub-second', // Search response time capability
+    languages: 2, // Number of supported languages (Arabic, English)
+    accuracy: 'AI-Powered', // Search accuracy description
+    indexedProducts: 'Ready to Scale', // Indexing capability
   },
 
-  // Performance Metrics
+  // Platform Capabilities
   performance: {
-    apiRequestsPerSecond: '10K+',
-    uptime: '99.9%',
-    dataCenters: 15,
-    modelsDeployed: '500+',
+    scalability: 'Cloud-Native',
+    uptime: 'Target 99.9%',
+    deployment: 'Multi-Region',
+    models: 'In Development',
     processingTimeMs: 4, // Default processing time for search results
   },
 
-  // Company Statistics
+  // Company Information
   company: {
-    foundedYear: 2020,
-    teamSize: '50+',
-    clientsServed: '1000+',
-    projectsCompleted: '200+',
-    countriesServed: 25,
+    foundedYear: 2025,
+    location: 'Riyadh, Saudi Arabia',
+    status: 'Pre-Launch',
+    focus: 'AI-Powered Digital Solutions',
   },
 
-  // Vision 2030 Stats
+  // Vision 2030 Stats (Saudi Arabia national goals)
   vision2030: {
     digitalTransformation: '90%',
     aiAdoption: '75%',

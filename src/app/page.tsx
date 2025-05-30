@@ -26,9 +26,9 @@ export default function Home() {
           <Navigation />
           <HeroSection />
           <SpicyLensSection />
+          <ProductsSection />
           <Vision2030Section />
           <AboutSection />
-          <ProductsSection />
           <Footer />
         </div>
       </div>

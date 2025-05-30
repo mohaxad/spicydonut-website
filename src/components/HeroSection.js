@@ -1,39 +1,32 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, ChevronDown } from 'lucide-react';
 import { useTranslation } from './I18nProvider';
-import { siteData } from '../config/data';
 import MagneticButton from './MagneticButton';
-import AnimatedCounter from './AnimatedCounter';
 import RotatingGlowBackground from './RotatingGlowBackground';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const HeroSection = () => {
   const { t, locale } = useTranslation();
   const isRTL = locale === 'ar';
-
-  // Helper function to parse numbers from strings
-  const parseNumber = (value) => {
-    if (typeof value === 'number') return value;
-    const parsed = parseInt(value.toString().replace(/[^0-9]/g, ''), 10);
-    return isNaN(parsed) ? 0 : parsed;
-  };
-
+  const isMobile = useIsMobile();
+  
   const textAnimation = {
-    initial: { opacity: 0, y: 100 },
+    initial: { opacity: 0, y: isMobile ? 30 : 100 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeOut" }
+    transition: { duration: isMobile ? 0.4 : 0.8, ease: "easeOut" }
   };
 
   const staggerChildren = {
     animate: {
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        staggerChildren: isMobile ? 0.1 : 0.2,
+        delayChildren: isMobile ? 0.1 : 0.3
       }
     }
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 bg-blackened-kaaba">
         {/* Rotating Glow Background */}
@@ -51,7 +44,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           variants={staggerChildren}
           initial="initial"
@@ -59,10 +52,10 @@ const HeroSection = () => {
           className="space-y-8"
         >
           {/* Badge */}
-          <motion.div variants={textAnimation}>
-            <div className="inline-flex items-center space-x-2 bg-saudi-emerald/10 border border-saudi-emerald/30 rounded-full px-6 py-3 glass">
-              <Sparkles className="w-5 h-5 text-saudi-emerald" />
-              <span className={`text-sm font-medium text-saudi-emerald ${isRTL ? 'font-arabic' : ''}`}>
+          <motion.div variants={textAnimation} className="mx-4">
+            <div className="inline-flex items-center space-x-2 bg-saudi-emerald/10 border border-saudi-emerald/30 rounded-full px-4 py-2 md:px-6 md:py-3 glass">
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-saudi-emerald flex-shrink-0" />
+              <span className={`text-xs md:text-sm font-medium text-saudi-emerald ${isRTL ? 'font-arabic' : ''} text-center`}>
                 {locale === 'ar' 
                   ? 'رواد الابتكار في الذكاء الاصطناعي بالسعودية'
                   : 'Leading AI Innovation in Saudi Arabia'
@@ -77,14 +70,14 @@ const HeroSection = () => {
               <span className="block text-white">{t('hero.title')}</span>
               <motion.span 
                 className="block gradient-text glow-text"
-                animate={{
+                animate={isMobile ? {} : {
                   textShadow: [
                     '0 0 10px #10B981',
                     '0 0 20px #10B981, 0 0 30px #10B981',
                     '0 0 10px #10B981'
                   ]
                 }}
-                transition={{
+                transition={isMobile ? {} : {
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
@@ -104,44 +97,6 @@ const HeroSection = () => {
             {t('hero.description')}
           </motion.p>
 
-          {/* Stats */}
-          <motion.div 
-            variants={textAnimation}
-            className="flex flex-wrap justify-center gap-8 md:gap-16 py-8"
-          >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold">
-                <AnimatedCounter end={parseNumber(siteData.company.clientsServed)} suffix="+" />
-              </div>
-              <p className={`text-muted-text mt-2 ${isRTL ? 'font-arabic' : ''}`}>
-                {t('hero.stats.clients')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold">
-                <AnimatedCounter end={parseNumber(siteData.company.projectsCompleted)} suffix="+" />
-              </div>
-              <p className={`text-muted-text mt-2 ${isRTL ? 'font-arabic' : ''}`}>
-                {t('hero.stats.projects')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold">
-                <AnimatedCounter end={parseNumber(siteData.company.countriesServed)} suffix="" />
-              </div>
-              <p className={`text-muted-text mt-2 ${isRTL ? 'font-arabic' : ''}`}>
-                {t('hero.stats.countries')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold">
-                <AnimatedCounter end={parseNumber(siteData.search.accuracy)} suffix="%" />
-              </div>
-              <p className={`text-muted-text mt-2 ${isRTL ? 'font-arabic' : ''}`}>
-                {t('hero.stats.accuracy')}
-              </p>
-            </div>
-          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div 
@@ -173,13 +128,13 @@ const HeroSection = () => {
             <motion.div className="flex flex-col items-center space-y-4">
               {/* Animated Scroll Mouse */}
               <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                animate={{ y: [0, isMobile ? 5 : 10, 0] }}
+                transition={{ repeat: Infinity, duration: isMobile ? 1.5 : 2, ease: "easeInOut" }}
                 className="w-6 h-10 border-2 border-saudi-emerald rounded-full mx-auto relative"
               >
                 <motion.div
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.5 }}
+                  animate={{ y: [0, isMobile ? 8 : 12, 0] }}
+                  transition={{ repeat: Infinity, duration: isMobile ? 1.5 : 2, ease: "easeInOut", delay: isMobile ? 0.3 : 0.5 }}
                   className="w-1 h-3 bg-saudi-emerald rounded-full absolute left-1/2 top-2 transform -translate-x-1/2"
                 />
               </motion.div>
@@ -187,12 +142,12 @@ const HeroSection = () => {
               {/* Bouncing Arrow */}
               <motion.div
                 animate={{ 
-                  y: [0, 8, 0],
+                  y: [0, isMobile ? 5 : 8, 0],
                   opacity: [0.6, 1, 0.6]
                 }}
                 transition={{ 
                   repeat: Infinity, 
-                  duration: 1.5, 
+                  duration: isMobile ? 1 : 1.5, 
                   ease: "easeInOut" 
                 }}
                 className="text-saudi-emerald"
@@ -209,28 +164,43 @@ const HeroSection = () => {
       </div>
 
       {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-saudi-emerald/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, -100],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0]
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeOut"
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        {[...Array(10)].map((_, i) => {
+          // Use deterministic values based on index to avoid hydration issues
+          const positions = [
+            { left: '10%', top: '20%' },
+            { left: '25%', top: '80%' },
+            { left: '40%', top: '15%' },
+            { left: '60%', top: '70%' },
+            { left: '75%', top: '30%' },
+            { left: '85%', top: '90%' },
+            { left: '15%', top: '60%' },
+            { left: '90%', top: '40%' },
+            { left: '35%', top: '85%' },
+            { left: '70%', top: '10%' }
+          ];
+          const delays = [0, 0.3, 0.6, 0.9, 1.2, 0.2, 0.5, 0.8, 1.1, 0.1];
+          const durations = [2, 2.5, 2.2, 2.8, 2.1, 2.4, 2.6, 2.3, 2.7, 2.9];
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-saudi-emerald/30 rounded-full"
+              style={positions[i]}
+              animate={{
+                y: [-20, -100],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0]
+              }}
+              transition={{
+                duration: durations[i],
+                repeat: Infinity,
+                delay: delays[i],
+                ease: "easeOut"
+              }}
+            />
+          );
+        })}
       </div>
     </section>
   );

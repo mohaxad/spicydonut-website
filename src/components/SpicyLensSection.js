@@ -5,26 +5,23 @@ import { useTranslation } from './I18nProvider';
 import { siteData } from '../config/data';
 import MagneticButton from './MagneticButton';
 import ScrollSection from './ScrollSection';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const SpicyLensSection = () => {
   const { t, locale } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
-  const [mounted, setMounted] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
   const isRTL = locale === 'ar';
+  const isMobile = useIsMobile();
 
   // Use configurable sample products
   const sampleProducts = siteData.sampleProducts;
 
-  // Use configurable total hits
-  const totalHits = siteData.search.totalHits;
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Demo results count
+  const totalHits = searchResults.length;
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -43,41 +40,20 @@ const SpicyLensSection = () => {
         setSearchResults(sampleProducts.slice(0, 9));
       }
       setIsSearching(false);
-    }, 150); // Use configurable response time
+    }, isMobile ? 100 : 150); // Faster response on mobile
   };
 
   useEffect(() => {
     // Show sample results on mount
-    if (mounted) {
-      setSearchResults(sampleProducts.slice(0, 9));
-    }
-  }, [mounted]);
+    setSearchResults(sampleProducts.slice(0, 9));
+  }, []);
 
-  if (!mounted) {
-    return (
-      <section 
-        id="spicylens"
-        ref={ref}
-        className="py-16 md:py-32 bg-gradient-to-b from-blackened-kaaba via-gray-900/50 to-blackened-kaaba relative overflow-hidden"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="animate-pulse">
-              <div className="h-12 md:h-16 bg-gray-800 rounded-lg mb-6 md:mb-8 w-64 md:w-96 mx-auto"></div>
-              <div className="h-4 bg-gray-800 rounded w-48 md:w-64 mx-auto mb-6 md:mb-8"></div>
-              <div className="h-10 md:h-12 bg-gray-800 rounded-xl w-full max-w-2xl mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section 
       id="spicylens"
       ref={ref}
-      className="py-16 md:py-32 bg-gradient-to-b from-blackened-kaaba via-gray-900/50 to-blackened-kaaba relative overflow-hidden"
+      className="py-12 md:py-16 lg:py-32 bg-gradient-to-b from-blackened-kaaba via-gray-900/50 to-blackened-kaaba relative overflow-hidden"
     >
       {/* Theme gradient background */}
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-amber-500/5 to-violet-500/5"></div>

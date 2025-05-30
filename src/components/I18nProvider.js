@@ -316,23 +316,23 @@ export const useTranslation = (namespace = 'common') => {
 
 export const I18nProvider = ({ children }) => {
   const [locale, setLocale] = useState('en');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    // Get locale from localStorage or browser
-    const savedLocale = localStorage.getItem('locale') || 'en';
-    setLocale(savedLocale);
+    // Get locale from localStorage or browser only on client side
+    if (typeof window !== 'undefined') {
+      const savedLocale = localStorage.getItem('locale') || 'en';
+      setLocale(savedLocale);
+    }
   }, []);
 
   const switchLanguage = (newLocale) => {
     setLocale(newLocale);
-    localStorage.setItem('locale', newLocale);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('locale', newLocale);
+    }
   };
 
   const t = (key) => {
-    if (!mounted) return key;
-    
     const keys = key.split('.');
     let value = fallbackTranslations[locale] || fallbackTranslations.en;
     
@@ -346,8 +346,7 @@ export const I18nProvider = ({ children }) => {
   const contextValue = {
     t,
     locale,
-    switchLanguage,
-    mounted
+    switchLanguage
   };
 
   return (

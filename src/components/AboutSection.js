@@ -1,24 +1,26 @@
 import { motion } from 'framer-motion';
 import { Globe, Users, Rocket, Award, MapPin, Calendar } from 'lucide-react';
 import ScrollSection from './ScrollSection';
-import AnimatedCounter from './AnimatedCounter';
 
 const AboutSection = () => {
   const milestones = [
     {
-      year: '2023',
-      title: 'Founded in Riyadh',
-      description: 'SpicyDonut was born with a vision to lead AI innovation in the Middle East'
-    },
-    {
-      year: '2024',
-      title: 'SpicySearch Launch',
-      description: 'Revolutionary search engine deployed, serving millions of queries daily'
-    },
-    {
+      id: 'founded',
       year: '2025',
-      title: 'Global Expansion',
-      description: 'Expanding operations across MENA region with enterprise partnerships'
+      title: 'Founded in Riyadh',
+      description: 'SpicyDonut launched with a vision to lead AI innovation in the Middle East'
+    },
+    {
+      id: 'platform-dev',
+      year: '2025',
+      title: 'Platform Development',
+      description: 'Building revolutionary AI-powered search and digital solutions platform'
+    },
+    {
+      id: 'market-launch',
+      year: '2026',
+      title: 'Market Launch',
+      description: 'Preparing to launch our first AI solutions and acquire initial clients'
     }
   ];
 
@@ -71,55 +73,6 @@ const AboutSection = () => {
           </motion.div>
         </ScrollSection>
 
-        {/* Stats Grid */}
-        <ScrollSection className="mb-32">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                <AnimatedCounter end={2023} />
-              </div>
-              <p className="text-muted-text">Founded</p>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                <AnimatedCounter end={150} suffix="+" />
-              </div>
-              <p className="text-muted-text">Team Members</p>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                <AnimatedCounter end={25} suffix="M+" />
-              </div>
-              <p className="text-muted-text">API Calls/Month</p>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                <AnimatedCounter end={15} suffix="+" />
-              </div>
-              <p className="text-muted-text">Countries Served</p>
-            </motion.div>
-          </div>
-        </ScrollSection>
 
         {/* Mission Statement */}
         <ScrollSection className="mb-32">
@@ -174,7 +127,7 @@ const AboutSection = () => {
             <div className="space-y-16">
               {milestones.map((milestone, index) => (
                 <motion.div
-                  key={milestone.year}
+                  key={milestone.id}
                   className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={{ opacity: 1, x: 0 }}
