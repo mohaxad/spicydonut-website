@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import A11yWidget from "@/components/A11yWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -40,10 +41,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log('🔄 RootLayout rendering...');
+  
   return (
     <html lang="en" className="dark">
       <body className="antialiased">
         {children}
+        <A11yWidget />
       </body>
     </html>
   );
